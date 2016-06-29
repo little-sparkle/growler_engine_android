@@ -1,1 +1,1 @@
-include ':app', ':library', ':yuecar'
+include ':app', ':library'
