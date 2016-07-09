@@ -4,4 +4,7 @@
     <string name="capture">capture</string>
     <string name="album">album</string>
     <string name="sdcard_not_found">Sdcard not found!</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
 </resources>

@@ -31,4 +31,5 @@ dependencies {
     compile 'com.google.guava:guava:19.0'
     compile 'com.daimajia.numberprogressbar:library:1.2@aar'
     compile "com.mikepenz:materialize:0.9.0@aar"
+    compile 'cn.pedant.sweetalert:library:1.3'
 }
