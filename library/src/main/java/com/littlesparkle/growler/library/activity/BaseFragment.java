@@ -9,14 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.littlesparkle.growler.library.R;
-
 
 /**
  * Created by dell on 2016/7/2.
  */
 public abstract class BaseFragment extends Fragment {
-    public BaseActivity mBaseActivity;
+    public BaseFragmentActivity mBaseFragmentActivity;
     public BaseFragment mBaseFragment;
     public String mTAG;
     public FragmentManager mFragmentManager;
@@ -31,8 +29,8 @@ public abstract class BaseFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
-        mBaseActivity = (BaseActivity) this.getActivity();
-        mLayoutInflater = mBaseActivity.getLayoutInflater();
+        mBaseFragmentActivity = (BaseFragmentActivity) this.getActivity();
+        mLayoutInflater = mBaseFragmentActivity.getLayoutInflater();
         mFragmentManager = this.getFragmentManager();
         mContentView = mLayoutInflater.inflate(setContentView(), container, false);
         initViews(savedInstanceState);
@@ -62,13 +60,13 @@ public abstract class BaseFragment extends Fragment {
 
     //跳转到其他Activity的操作
     public void startActivity(Class ActivityClass) {
-        Intent intent = new Intent(mBaseActivity, ActivityClass);
+        Intent intent = new Intent(mBaseFragmentActivity, ActivityClass);
         this.startActivity(intent);
     }
 
     //跳转到其他ActivityForRS的操作
     public void startActivityForResult(Class ActivityClass, int reqCode) {
-        Intent intent = new Intent(mBaseActivity, ActivityClass);
+        Intent intent = new Intent(mBaseFragmentActivity, ActivityClass);
         this.startActivityForResult(intent, reqCode);
     }
 }
