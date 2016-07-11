@@ -1,6 +1,5 @@
 package com.littlesparkle.growler.library.webview;
 
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -18,6 +17,7 @@ import android.widget.Toast;
 import com.daimajia.numberprogressbar.NumberProgressBar;
 import com.littlesparkle.growler.library.R;
 import com.littlesparkle.growler.library.activity.BaseActivity;
+import com.littlesparkle.growler.library.dialog.DialogHelper;
 import com.littlesparkle.growler.library.utility.FileUtils;
 
 import java.io.File;
@@ -116,25 +116,23 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
             return;
         }
 
-        new AlertDialog.Builder(this)
-                .setItems(new String[]{getString(R.string.capture), getString(R.string.album)},
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog,
-                                                int which) {
-                                switch (which) {
-                                    case 0:
-                                        camera();
-                                        break;
-                                    case 1:
-                                        gallery();
-                                        break;
-                                    default:
-                                        break;
-                                }
-                            }
-                        })
-                .setOnCancelListener(new DialogInterface.OnCancelListener() {
+        DialogHelper.showOptionsDialog(this, new int[]{R.string.capture, R.string.album},
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case 0:
+                                camera();
+                                break;
+                            case 1:
+                                gallery();
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                },
+                new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialogInterface) {
                         if (mOneFileUploadCallback != null) {
@@ -146,7 +144,8 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
                             mMultiFilesUploadCallback = null;
                         }
                     }
-                }).show();
+                }, null
+        );
     }
 
     @Override
