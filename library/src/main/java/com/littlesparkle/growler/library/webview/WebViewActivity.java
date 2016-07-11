@@ -1,5 +1,7 @@
 package com.littlesparkle.growler.library.webview;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -8,6 +10,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -69,7 +72,8 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
         String title = getIntent().getStringExtra("title");
         mTitle.setText(title);
 //        mWebView.loadUrl(url);
-        mWebView.loadUrl("file:///android_asset/index.html");
+//        mWebView.loadUrl("file:///android_asset/index.html");
+        mWebView.loadUrl("file:///android_asset/test.html");
     }
 
     @Override
@@ -77,7 +81,16 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
         return R.layout.activity_web_view;
     }
 
+    @SuppressLint({"SetJavaScriptEnabled", "AddJavascriptInterface"})
     private void initWebView() {
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setUseWideViewPort(true);
+        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setSupportZoom(true);
+
+
         mWebView.setWebViewClient(new BaseWebViewClient());
         BaseWebChromeClient webChromeClient = new BaseWebChromeClient() {
             @Override
@@ -92,14 +105,33 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
         };
         webChromeClient.setOnOpenFileChooserListener(this);
         mWebView.setWebChromeClient(webChromeClient);
+        mWebView.addJavascriptInterface(new WebViewResultInterface(this), "WebViewResultInterface");
 
-        WebSettings webSettings = mWebView.getSettings();
-        webSettings.setUseWideViewPort(true);
-        webSettings.setLoadWithOverviewMode(true);
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setBuiltInZoomControls(true);
-        webSettings.setSupportZoom(true);
         mWebView.requestFocusFromTouch();
+    }
+
+    private class WebViewResultInterface {
+        private Context mContext;
+
+        public WebViewResultInterface(Context context) {
+            this.mContext = context;
+        }
+
+        @JavascriptInterface
+        public void onSuccess(String resule) {
+            Toast.makeText(mContext, resule, Toast.LENGTH_SHORT).show();
+            if (mListener != null) {
+                mListener.onSuccess(resule);
+            }
+        }
+
+        @JavascriptInterface
+        public void onFailed(String resule) {
+            Toast.makeText(mContext, resule, Toast.LENGTH_SHORT).show();
+            if (mListener != null) {
+                mListener.onFailed(resule);
+            }
+        }
     }
 
     @Override
@@ -208,5 +240,17 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
     public void openFileChooserWithMultiFiles(ValueCallback<Uri[]> filePathCallback) {
         mMultiFilesUploadCallback = filePathCallback;
         getImage();
+    }
+
+    private ResultListener mListener;
+
+    public void setResultListener(ResultListener listener) {
+        mListener = listener;
+    }
+
+    public interface ResultListener {
+        void onSuccess(String resule);
+
+        void onFailed(String resule);
     }
 }
