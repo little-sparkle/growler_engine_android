@@ -3,7 +3,7 @@ package com.littlesparkle.growler.library.activity;
 import android.os.Handler;
 import android.os.Message;
 
-public abstract class HandlerActivity extends BaseFragmentActivity {
+public abstract class HandlerActivity extends BaseActivity {
 
     protected Handler mHandler = new Handler() {
         @Override
@@ -12,5 +12,6 @@ public abstract class HandlerActivity extends BaseFragmentActivity {
         }
     };
 
-    protected abstract void onHandlerMessage(Message msg);
+    protected void onHandlerMessage(Message msg) {
+    }
 }
