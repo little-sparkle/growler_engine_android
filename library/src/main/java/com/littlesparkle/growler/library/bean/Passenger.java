@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 
-public class Passenger extends Bean implements Parcelable {
+public class Passenger extends User implements Parcelable {
     public String nickname;
     public int b_y;
     public int b_m;

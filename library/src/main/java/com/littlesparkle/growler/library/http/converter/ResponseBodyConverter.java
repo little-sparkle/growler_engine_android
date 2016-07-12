@@ -24,9 +24,9 @@ final class ResponseBodyConverter<T> implements Converter<ResponseBody, T> {
     public T convert(ResponseBody value) throws IOException {
         String res = value.string();
         Response response = gson.fromJson(res, Response.class);
-        if (response.result == Api.RESULT_ERROR) {
+        if (response.code != Api.CODE_SUCCESS) {
             value.close();
-            throw new ApiException(Api.ERROR_CODE_STANDARD, response.message);
+            throw new ApiException(Api.ERROR_CODE_STANDARD, "");
         }
 
         try {

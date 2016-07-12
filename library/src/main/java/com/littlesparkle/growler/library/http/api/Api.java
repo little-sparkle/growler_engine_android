@@ -12,8 +12,8 @@ public class Api {
     public static final int READ_TIMEOUT = DEFAULT_TIMEOUT;
     public static final int WRITE_TIMEOUT = DEFAULT_TIMEOUT;
 
-    public static final int RESULT_SUCCESS = 0;
-    public static final int RESULT_ERROR = 1;
+    public static final int CODE_SUCCESS = 0;
+    public static final int CODE_ERROR = 1;
 
     public static final int ERROR_CODE_BASE = 1000;
     public static final int ERROR_CODE_UNKNOWN = ERROR_CODE_BASE;
