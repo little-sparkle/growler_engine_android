@@ -22,6 +22,22 @@ public class PrefHelper {
         return rxPreferences.getInteger(key, defaultValue).get();
     }
 
+    public static long getLong(Context context, String key, long defaultValue) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        RxSharedPreferences rxPreferences = RxSharedPreferences.create(preferences);
+        return rxPreferences.getLong(key, defaultValue).get();
+    }
+
+    public static float getFloat(Context context, String key, float defaultValue) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        RxSharedPreferences rxPreferences = RxSharedPreferences.create(preferences);
+        return rxPreferences.getFloat(key, defaultValue).get();
+    }
+
+    public static double getDouble(Context context, String key, double defaultValue) {
+        return getFloat(context, key, (float) defaultValue);
+    }
+
     public static String getString(Context context, String key) {
         return getString(context, key, "");
     }
@@ -76,5 +92,21 @@ public class PrefHelper {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         RxSharedPreferences rxPreferences = RxSharedPreferences.create(preferences);
         rxPreferences.getBoolean(key).set(value);
+    }
+
+    public static void setLong(Context context, String key, long value) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        RxSharedPreferences rxPreferences = RxSharedPreferences.create(preferences);
+        rxPreferences.getLong(key).set(value);
+    }
+
+    public static void setDouble(Context context, String key, double value) {
+        setFloat(context, key, (float) value);
+    }
+
+    public static void setFloat(Context context, String key, float value) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        RxSharedPreferences rxPreferences = RxSharedPreferences.create(preferences);
+        rxPreferences.getFloat(key).set(value);
     }
 }
