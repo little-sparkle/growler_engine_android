@@ -71,9 +71,9 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
         String url = getIntent().getStringExtra("url");
         String title = getIntent().getStringExtra("title");
         mTitle.setText(title);
-//        mWebView.loadUrl(url);
+        mWebView.loadUrl(url);
 //        mWebView.loadUrl("file:///android_asset/index.html");
-        mWebView.loadUrl("file:///android_asset/test.html");
+//        mWebView.loadUrl("file:///android_asset/test.html");
     }
 
     @Override
@@ -90,7 +90,7 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
         webSettings.setBuiltInZoomControls(true);
         webSettings.setSupportZoom(true);
 
-
+        mWebView.setDownloadListener(new BaseWebViewDownloadListener(this));
         mWebView.setWebViewClient(new BaseWebViewClient());
         BaseWebChromeClient webChromeClient = new BaseWebChromeClient() {
             @Override
