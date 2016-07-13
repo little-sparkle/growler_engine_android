@@ -17,15 +17,17 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/arrow_back_grey" />
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:src="@drawable/title_bar_back" />
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_normal"
             android:layout_toRightOf="@id/back"
-            android:src="@drawable/close_grey" />
+            android:src="@drawable/title_bar_close" />
 
         <TextView
             android:id="@+id/title_text"
