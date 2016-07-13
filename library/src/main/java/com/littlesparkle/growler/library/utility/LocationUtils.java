@@ -1,11 +1,11 @@
-package com.littlesparkle.growler.library.location;
+package com.littlesparkle.growler.library.utility;
 
 import android.content.Context;
 import android.location.LocationManager;
 
 import java.util.List;
 
-public class LocationHelper {
+public class LocationUtils {
 
     public static boolean hasGPSDevice(Context context) {
         LocationManager locationManager =
