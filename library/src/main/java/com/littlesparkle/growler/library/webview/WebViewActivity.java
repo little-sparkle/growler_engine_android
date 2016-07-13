@@ -72,8 +72,6 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
         String title = getIntent().getStringExtra("title");
         mTitle.setText(title);
         mWebView.loadUrl(url);
-//        mWebView.loadUrl("file:///android_asset/index.html");
-//        mWebView.loadUrl("file:///android_asset/test.html");
     }
 
     @Override

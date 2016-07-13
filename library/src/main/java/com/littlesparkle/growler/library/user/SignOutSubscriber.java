@@ -1,12 +1,11 @@
 package com.littlesparkle.growler.library.user;
 
-import com.littlesparkle.growler.library.http.HttpSubscriber;
-import com.littlesparkle.growler.library.http.Response;
+import com.littlesparkle.growler.library.http.BaseHttpSubscriber;
 import com.littlesparkle.growler.library.http.api.Api;
 import com.littlesparkle.growler.library.http.api.ApiException;
-import com.littlesparkle.growler.library.http.api.DefaultResponse;
+import com.littlesparkle.growler.library.http.DefaultResponse;
 
-public abstract class SignOutSubscriber extends HttpSubscriber<DefaultResponse> {
+public abstract class SignOutSubscriber extends BaseHttpSubscriber<DefaultResponse> {
     @Override
     protected void onError(ApiException err) {
         onSignOutFail(err);

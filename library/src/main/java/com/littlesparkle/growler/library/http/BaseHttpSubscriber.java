@@ -5,8 +5,8 @@ import com.littlesparkle.growler.library.http.api.ApiException;
 
 import rx.Subscriber;
 
-public abstract class HttpSubscriber<T> extends Subscriber<T> {
-    public HttpSubscriber() {
+public abstract class BaseHttpSubscriber<T> extends Subscriber<T> {
+    public BaseHttpSubscriber() {
     }
 
     @Override

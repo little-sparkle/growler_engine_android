@@ -1,11 +1,11 @@
 package com.littlesparkle.growler.library.user;
 
-import com.littlesparkle.growler.library.http.HttpSubscriber;
+import com.littlesparkle.growler.library.http.BaseHttpSubscriber;
 import com.littlesparkle.growler.library.http.Response;
 import com.littlesparkle.growler.library.http.api.Api;
 import com.littlesparkle.growler.library.http.api.ApiException;
 
-public abstract class PassengerSignInSubscriber extends HttpSubscriber<Response<PassengerSignInResponse>> {
+public abstract class PassengerSignInSubscriber extends BaseHttpSubscriber<Response<PassengerSignInResponse>> {
     @Override
     protected void onError(ApiException err) {
         onSignInFail(err);

@@ -3,7 +3,7 @@ package com.littlesparkle.growler.library.update;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.littlesparkle.growler.library.http.HttpSubscriber;
+import com.littlesparkle.growler.library.http.BaseHttpSubscriber;
 import com.littlesparkle.growler.library.http.api.ApiException;
 import com.littlesparkle.growler.library.misc.MiscHelper;
 
@@ -25,7 +25,7 @@ public class UpdateHelper {
             @NonNull final String url,
             @NonNull final UpdateListener listener) {
 
-        Subscriber subscriber = new HttpSubscriber<UpdateResponse>() {
+        Subscriber subscriber = new BaseHttpSubscriber<UpdateResponse>() {
             @Override
             public void onNext(UpdateResponse updateResponse) {
                 listener.onUpdateAvailable(updateResponse.data);
