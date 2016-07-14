@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 
 import com.littlesparkle.growler.library.http.DefaultResponse;
 import com.littlesparkle.growler.library.http.Request;
-import com.littlesparkle.growler.library.http.Response;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -144,7 +143,7 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
     public interface OrderApi {
         @POST("order/request/now")
         @FormUrlEncoded
-        Observable<Response<RequestOrderResponse>> requestNow(
+        Observable<RequestOrderResponse> requestNow(
                 @Field("user_id") int userId,
                 @Field("token") String token,
                 @Field("car_type") int car_type,
@@ -157,7 +156,7 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
 
         @POST("order/request/reservation")
         @FormUrlEncoded
-        Observable<Response<RequestOrderResponse>> requestReservation(
+        Observable<RequestOrderResponse> requestReservation(
                 @Field("user_id") int userId,
                 @Field("token") String token,
                 @Field("car_type") int car_type,
