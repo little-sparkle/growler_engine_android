@@ -4,16 +4,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
-
-import com.google.gson.Gson;
 import com.igexin.sdk.PushConsts;
-import com.littlesparkle.growler.library.bean.User;
+
 
 /**
  * Created by dell on 2016/7/13.
  */
-public abstract class PushGeTuiReceiver<T> extends BroadcastReceiver {
+public abstract class PushGeTuiReceiver extends BroadcastReceiver {
 
     public abstract void onMessageGet(Context context, String data);
 
