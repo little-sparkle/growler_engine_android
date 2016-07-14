@@ -35,8 +35,8 @@
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:textColor="@color/md_grey_500"
-            android:textSize="@dimen/title_bar_text_size" />
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_primary" />
     </RelativeLayout>
 
     <com.daimajia.numberprogressbar.NumberProgressBar

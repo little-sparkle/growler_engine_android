@@ -5,7 +5,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="title_bar_height">48dp</dimen>
-    <dimen name="title_bar_text_size">22sp</dimen>
 
     <dimen name="text_primary">22sp</dimen>
     <dimen name="text_secondary">18sp</dimen>

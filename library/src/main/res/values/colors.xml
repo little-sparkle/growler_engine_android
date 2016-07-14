@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text_primary">@color/md_white_1000</color>
+    <color name="text_secondary">@color/md_blue_grey_500</color>
+    <color name="title_bar_background">@color/md_grey_500</color>
+</resources>
