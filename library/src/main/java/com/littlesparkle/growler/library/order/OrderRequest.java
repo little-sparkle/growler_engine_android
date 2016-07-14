@@ -140,6 +140,18 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
                 .subscribe(subscriber);
     }
 
+    public Subscription getOrderHistory(@NonNull Subscriber subscriber,
+                                        int userId,
+                                        String token,
+                                        int last_index,
+                                        int page_count) {
+        return mService.orderHistory(userId, token, last_index, page_count)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(Schedulers.io())
+                .subscribe(subscriber);
+    }
+
     public interface OrderApi {
         @POST("order/request/now")
         @FormUrlEncoded
@@ -228,6 +240,14 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
                 @Field("user_id") int userId,
                 @Field("token") String token,
                 @Field("order_id") int order_id
+        );
+
+        @GET("order/history")
+        Observable<DefaultResponse> orderHistory(
+                @Field("user_id") int userId,
+                @Field("token") String token,
+                @Field("last_index") int last_index,
+                @Field("page_count") int page_count
         );
     }
 }
