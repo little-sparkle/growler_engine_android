@@ -11,6 +11,6 @@ public interface UpdateService {
 
     //    请求更新
     @POST("/ota/update")
-    Observable otaUpdate(@Body UpdatePackageInfo updatePackageInfo);
+    Observable<UpdatePackageInfo> otaUpdate(@Body UpdateRequestInfo updateRequestInfo);
 
 }
