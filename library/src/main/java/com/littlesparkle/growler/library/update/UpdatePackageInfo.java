@@ -1,6 +1,9 @@
 package com.littlesparkle.growler.library.update;
 
-public class UpdatePackageInfo {
+import java.io.Serializable;
+
+public class UpdatePackageInfo implements Serializable{
+
     private String update_log;
     private String version;
     private int version_i;
