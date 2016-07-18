@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< ec9679772d009d5bc75afee32a2547764ab4fabc
 <manifest package="com.littlesparkle.growler.library" />
+<<<<<<< 9318d3b415e70661b1eb2a65eeae6144c3b2dae7
 =======
-<manifest package="com.littlesparkle.growler.library">
 
-</manifest>
->>>>>>> 重新封装
+>>>>>>> add login activity

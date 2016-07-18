@@ -16,6 +16,9 @@
     <string name="quit_confirmation">Click back again to quit</string>
 
     <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="forget_password">Forget password</string>
+    <string name="send_auth_code">Send auth code</string>
     <string name="hint_mobile">Mobile</string>
     <string name="hint_auth_code">Auth Code</string>
     <string name="hint_password">Password</string>
