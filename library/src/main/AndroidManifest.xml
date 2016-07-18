@@ -2,17 +2,17 @@
 <manifest package="com.littlesparkle.growler.library"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <application>
-        <activity
-            android:name=".activity.UpdateActivity"
-            android:theme="@style/FullHeightDialog">
-        </activity>
+    <!--<application>-->
+        <!--<activity-->
+            <!--android:name=".activity.UpdateActivity"-->
+            <!--android:theme="@style/FullHeightDialog">-->
+        <!--</activity>-->
 
-        <service
-            android:name=".service.DownloadService"
-            android:enabled="true"
-            android:exported="true">
-        </service>
-    </application>
+        <!--<service-->
+            <!--android:name=".service.DownloadService"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="true">-->
+        <!--</service>-->
+    <!--</application>-->
 
 </manifest>

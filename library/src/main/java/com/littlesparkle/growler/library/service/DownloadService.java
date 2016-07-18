@@ -2,7 +2,9 @@ package com.littlesparkle.growler.library.service;
 
 import android.app.Service;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.IBinder;
+import android.support.annotation.Nullable;
 
 
 import org.xutils.common.Callback;
@@ -14,32 +16,35 @@ import java.math.BigDecimal;
 
 import de.greenrobot.event.EventBus;
 
-public class DownloadService extends Service {
+public abstract class DownloadService extends Service {
 
 
     public DownloadService() {
 
     }
 
+    public abstract String setSavePath();
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         String url = intent.getStringExtra("url");
 
-        url = "https://github.com/wyouflf/xUtils3/archive/master.zip";
+//        url = "https://github.com/wyouflf/xUtils3/archive/master.zip";
 
         RequestParams params = new RequestParams(url);
         //设置断点续传
         params.setAutoResume(true);
 
-        params.setSaveFilePath("/storage/emulated/0/Download/master.zip");
+        params.setSaveFilePath(setSavePath());
 
         x.http().get(params, new Callback.ProgressCallback<File>() {
 
-
             @Override
             public void onSuccess(File result) {
-
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setDataAndType(Uri.fromFile(result), "application/vnd.android.package-archive");
+                startActivity(intent);
             }
 
             @Override
@@ -79,9 +84,11 @@ public class DownloadService extends Service {
 
     }
 
+    @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-
-        throw new UnsupportedOperationException("Not yet implemented");
+        return null;
     }
+
+
 }

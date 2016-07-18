@@ -1,5 +1,6 @@
 package com.littlesparkle.growler.library.update;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,6 +36,12 @@ public class UpdateTask extends Request<UpdateService> {
         this.context = context;
     }
 
+
+    public void setUpdateActivity(UpdateActivity updateActivity) {
+        this.updateActivity = updateActivity;
+    }
+
+    private UpdateActivity updateActivity = null;
     private Context context = null;
     private UpdateRequestInfo updateRequestInfo = null;
 
@@ -53,6 +60,7 @@ public class UpdateTask extends Request<UpdateService> {
 
 
     }
+
 
     @Override
     protected Class<UpdateService> getServiceClass() {
@@ -80,7 +88,7 @@ public class UpdateTask extends Request<UpdateService> {
                     public void onNext(UpdatePackageInfo updatePackageInfo) {
                         if (updatePackageInfo.getVersionI() > updateRequestInfo.getVersion_code()) {
 
-                            Intent intent = new Intent(context, UpdateActivity.class);
+                            Intent intent = new Intent(context, updateActivity.getClass());
                             Bundle bundle = new Bundle();
                             bundle.putSerializable("updatePackageInfo", updatePackageInfo);
                             intent.putExtra("packageBundle", bundle);

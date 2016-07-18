@@ -12,8 +12,9 @@ import de.greenrobot.event.EventBus;
 import de.greenrobot.event.Subscribe;
 import de.greenrobot.event.ThreadMode;
 
-public class UpdateActivity extends BaseFragmentActivity {
+public abstract class UpdateActivity extends BaseFragmentActivity {
     UpdatePackageInfo updatePackageInfo = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +28,6 @@ public class UpdateActivity extends BaseFragmentActivity {
         EventBus.getDefault().unregister(this);
     }
 
-    @Override
-    public int setActivityContentView() {
-        return R.layout.activity_update;
-    }
 
     @Override
     public void initData() {
@@ -45,15 +42,15 @@ public class UpdateActivity extends BaseFragmentActivity {
 
     }
 
-    public void StartServiceForDownload() {
-        Intent intent = new Intent(this, DownloadService.class);
+    public void StartServiceForDownload(DownloadService service) {
+        Intent intent = new Intent(this, service.getClass());
         intent.putExtra("url", updatePackageInfo.getUrl());
         this.startService(intent);
 
     }
 
     @Subscribe(threadMode = ThreadMode.MainThread)
-    public void helloEventBus(float message) {
+    public abstract void helloEventBus(float message);
 
-    }
+
 }
