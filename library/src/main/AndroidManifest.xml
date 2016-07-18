@@ -1,5 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.littlesparkle.growler.library" /><<<<<<< .mine<manifest package="com.littlesparkle.growler.library" />
-=======<manifest package="com.littlesparkle.growler.library">
-
-</manifest>>>>>>>> .theirs
+<manifest package="com.littlesparkle.growler.library" />
