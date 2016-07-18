@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0"
+    tools:context=".activity.BaseRegisterActivity">
+
+    <RelativeLayout
+        android:id="@+id/logo_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/logo_container_height"
+        android:gravity="center">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/logo_width"
+            android:layout_height="@dimen/logo_height"
+            android:layout_centerVertical="true"
+            android:background="@drawable/car_logo" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/input_area_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo_container"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/mobile_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_item_height">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/input_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableLeft="@drawable/mobile_focused"
+                android:hint="@string/hint_mobile"
+                android:textColorHint="@color/text_hint" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/auth_code_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_item_height">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/input_auth_code"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableLeft="@drawable/auth_code_unfocused"
+                android:hint="@string/hint_auth_code"
+                android:textColorHint="@color/text_hint" />
+
+            <TextView
+                android:id="@+id/send_auth_code"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/input_auth_code"
+                android:text="发送验证码"
+                android:textSize="@dimen/text_small" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/password_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_item_height">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableLeft="@drawable/password_unfocused"
+                android:hint="@string/hint_password"
+                android:textColorHint="@color/text_hint" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/password_confirmation_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_item_height">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/input_password_confirmation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableLeft="@drawable/password_unfocused"
+                android:hint="@string/hint_password_confirmation"
+                android:textColorHint="@color/text_hint" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_button_width"
+        android:layout_below="@+id/input_area_container"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/activity_margin"
+        android:background="@color/action_button_background"
+        android:text="@string/register"
+        android:textColor="@color/md_white_1000"
+        android:textSize="@dimen/text_secondary" />
+</RelativeLayout>
+

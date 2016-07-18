@@ -8,8 +8,17 @@
 
     <dimen name="text_primary">22sp</dimen>
     <dimen name="text_secondary">18sp</dimen>
+    <dimen name="text_small">12sp</dimen>
 
     <dimen name="margin_normal">4dp</dimen>
     <dimen name="padding_normal">4dp</dimen>
     <dimen name="padding_divider">16dp</dimen>
+
+    <!--login, register -->
+    <dimen name="action_button_width">48dp</dimen>
+    <dimen name="logo_container_height">222dp</dimen>
+    <dimen name="logo_height">68dp</dimen>
+    <dimen name="logo_width">65dp</dimen>
+    <dimen name="input_area_height">150dp</dimen>
+    <dimen name="input_item_height">50dp</dimen>
 </resources>
