@@ -13,4 +13,5 @@
     <string name="contact_us">Contact Us</string>
     <string name="about">About</string>
     <string name="quit">Quit</string>
+    <string name="quit_confirmation">Click back again to quit</string>
 </resources>
