@@ -12,7 +12,7 @@ import de.greenrobot.event.EventBus;
 import de.greenrobot.event.Subscribe;
 import de.greenrobot.event.ThreadMode;
 
-public abstract class UpdateActivity extends BaseFragmentActivity {
+public abstract class UpdateActivity extends BaseActivity {
     UpdatePackageInfo updatePackageInfo = null;
 
 
@@ -36,11 +36,6 @@ public abstract class UpdateActivity extends BaseFragmentActivity {
         updatePackageInfo = (UpdatePackageInfo) bundle.getSerializable("updatePackageInfo");
     }
 
-    @Override
-    public void initView() {
-
-
-    }
 
     public void StartServiceForDownload(DownloadService service) {
         Intent intent = new Intent(this, service.getClass());
