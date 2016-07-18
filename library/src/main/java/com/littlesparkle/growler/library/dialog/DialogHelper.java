@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 
 import com.littlesparkle.growler.library.R;
-import com.littlesparkle.growler.library.base.OptionItemAdapter;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -68,10 +67,6 @@ public class DialogHelper {
         return dialog;
     }
 
-    public static void showOptionsDialog(final Context context, final int[] options) {
-        showOptionsDialog(context, options, null, null, null);
-    }
-
     public static void showOptionsDialog(
             final Context context,
             final int[] options,
@@ -79,7 +74,7 @@ public class DialogHelper {
             final DialogInterface.OnCancelListener cancelListener,
             final DialogInterface.OnDismissListener dismissListener) {
         new AlertDialog.Builder(context)
-                .setAdapter(new OptionItemAdapter(context, R.layout.option_item, options), clickListener)
+                .setAdapter(new DialogOptionsAdapter(context, R.layout.option_item, options), clickListener)
                 .setOnCancelListener(cancelListener)
                 .setOnDismissListener(dismissListener)
                 .show();
