@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< ec9679772d009d5bc75afee32a2547764ab4fabc
+<manifest package="com.littlesparkle.growler.library" />
+=======
+<manifest package="com.littlesparkle.growler.library">
+
+</manifest>
+>>>>>>> 重新封装
