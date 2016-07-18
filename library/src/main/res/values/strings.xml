@@ -17,10 +17,14 @@
 
     <string name="register">Register</string>
     <string name="login">Login</string>
+    <string name="reset_pwd">Reset Password</string>
     <string name="forget_password">Forget password</string>
     <string name="send_auth_code">Send auth code</string>
     <string name="hint_mobile">Mobile</string>
     <string name="hint_auth_code">Auth Code</string>
     <string name="hint_password">Password</string>
     <string name="hint_password_confirmation">Password Confirmation</string>
+    <string name="hint_original_password">Original Password</string>
+    <string name="hint_new_password">New Password</string>
+    <string name="hint_new_password_confirmation">New Password Confirmation</string>
 </resources>

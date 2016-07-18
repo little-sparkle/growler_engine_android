@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="com.littlesparkle.growler.library" />
+<<<<<<< 8960fba1e8bfe3179b58256283fc586f0cc9ee67
 <<<<<<< 9318d3b415e70661b1eb2a65eeae6144c3b2dae7
 =======
 
 >>>>>>> add login activity
+=======
+
+<<<<<<< 6e5bf8077a3110533294f46c15d5c8e426e05e9c
+=======
+    <application>
+        <activity android:name=".activity.BaseLoginActivity" />
+        <activity android:name=".activity.BaseForgetPwdActivity" />
+        <activity android:name=".activity.BaseResetPwdActivity"></activity>
+    </application>
+
+</manifest>
+>>>>>>> add reset pwd
+>>>>>>> add reset pwd
