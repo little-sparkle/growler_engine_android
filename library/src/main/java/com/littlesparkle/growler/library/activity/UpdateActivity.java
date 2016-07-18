@@ -19,6 +19,7 @@ public abstract class UpdateActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setTheme(R.style.FullHeightDialog);
         EventBus.getDefault().register(this);
     }
 
