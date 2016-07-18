@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.littlesparkle.growler.library.R;
 
-public abstract class BaseForgetPwdActivity extends BaseActivity {
+public abstract class BaseForgetPwdActivity extends BaseTitleBarActivity {
 
     protected AppCompatEditText mMobileInput;
     protected AppCompatEditText mAuthCodeInput;
@@ -29,6 +29,7 @@ public abstract class BaseForgetPwdActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        super.initView();
         mMobileInput = (AppCompatEditText) findViewById(R.id.input_mobile);
         mAuthCodeInput = (AppCompatEditText) findViewById(R.id.input_auth_code);
         mPwdInput = (AppCompatEditText) findViewById(R.id.input_password);
@@ -47,6 +48,11 @@ public abstract class BaseForgetPwdActivity extends BaseActivity {
                 onSendAuthCodeClick();
             }
         });
+    }
+
+    @Override
+    protected int getTitleResourceId() {
+        return R.string.forget_password;
     }
 
     protected abstract void onSendAuthCodeClick();

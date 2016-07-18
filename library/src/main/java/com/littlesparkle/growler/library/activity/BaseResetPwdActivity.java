@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.littlesparkle.growler.library.R;
 
-public abstract class BaseResetPwdActivity extends BaseActivity {
+public abstract class BaseResetPwdActivity extends BaseTitleBarActivity {
     protected AppCompatEditText mOriginalInput;
     protected AppCompatEditText mPwdInput;
     protected AppCompatEditText mPwdConfInput;
@@ -26,6 +26,7 @@ public abstract class BaseResetPwdActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        super.initView();
         mOriginalInput = (AppCompatEditText) findViewById(R.id.input_original_pwd);
         mPwdInput = (AppCompatEditText) findViewById(R.id.input_new_pwd);
         mPwdConfInput = (AppCompatEditText) findViewById(R.id.input_new_pwd_confirmation);
@@ -36,6 +37,11 @@ public abstract class BaseResetPwdActivity extends BaseActivity {
                 onResetPwdClick();
             }
         });
+    }
+
+    @Override
+    protected int getTitleResourceId() {
+        return R.string.reset_pwd;
     }
 
     protected abstract void onResetPwdClick();
