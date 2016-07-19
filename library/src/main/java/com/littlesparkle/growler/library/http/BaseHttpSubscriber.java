@@ -12,14 +12,6 @@ public abstract class BaseHttpSubscriber<T> extends Subscriber<T> {
         this(null, null);
     }
 
-    public BaseHttpSubscriber(IProgress progress) {
-        this(progress, null);
-    }
-
-    public BaseHttpSubscriber(IToast toast) {
-        this(null, toast);
-    }
-
     public BaseHttpSubscriber(IProgress progress, IToast toast) {
         mProgress = progress;
         mToast = toast;

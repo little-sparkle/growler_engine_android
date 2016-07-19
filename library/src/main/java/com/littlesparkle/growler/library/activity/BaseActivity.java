@@ -1,12 +1,17 @@
 package com.littlesparkle.growler.library.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.littlesparkle.growler.library.R;
+import com.littlesparkle.growler.library.http.BaseHttpSubscriber;
 
-public abstract class BaseActivity extends AppCompatActivity {
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
+public abstract class BaseActivity extends AppCompatActivity
+        implements BaseHttpSubscriber.IToast, BaseHttpSubscriber.IProgress {
 
     private static final int QUIT_CHECK_INTERNAL = 2000;
     protected boolean mIsDoubleClickToQuit = false;
@@ -26,7 +31,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void initData() {
     }
 
-
     protected abstract int getLayoutResId();
 
     @Override
@@ -42,5 +46,34 @@ public abstract class BaseActivity extends AppCompatActivity {
                 super.onBackPressed();
             }
         }
+    }
+
+    private SweetAlertDialog mProgressDialog = null;
+
+    @Override
+    public void showProgress() {
+        if (mProgressDialog == null) {
+            mProgressDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
+            mProgressDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+            mProgressDialog.setTitleText(getString(R.string.please_waiting));
+            mProgressDialog.setCancelable(true);
+        }
+        mProgressDialog.show();
+    }
+
+    @Override
+    public void dismissProgress() {
+        if (mProgressDialog != null) {
+            mProgressDialog.hide();
+        }
+    }
+
+    @Override
+    public void showToast(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void dismissToast() {
     }
 }

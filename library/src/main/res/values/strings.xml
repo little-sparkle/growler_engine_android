@@ -7,6 +7,7 @@
 
     <string name="cancel">Cancel</string>
     <string name="ok">Ok</string>
+    <string name="please_waiting">Please waiting</string>
 
     <string name="check_update">Check Update</string>
     <string name="feedback">Feedback</string>

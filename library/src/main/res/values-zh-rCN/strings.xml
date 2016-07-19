@@ -7,6 +7,7 @@
 
     <string name="cancel">取消</string>
     <string name="ok">确定</string>
+    <string name="please_waiting">请稍等</string>
 
     <string name="check_update">检查更新</string>
     <string name="feedback">意见反馈</string>
