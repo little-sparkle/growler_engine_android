@@ -12,5 +12,15 @@ public class DriverSignInResponse extends Response<DriverSignInResponse.Date> {
         public Car car;
         public CarBrand car_brand;
         public CarSerie car_serie;
+
+        @Override
+        public String toString() {
+            return "Date{" +
+                    "driver=" + driver +
+                    ", car=" + car +
+                    ", car_brand=" + car_brand +
+                    ", car_serie=" + car_serie +
+                    '}';
+        }
     }
 }

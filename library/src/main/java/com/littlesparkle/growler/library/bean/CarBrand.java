@@ -37,4 +37,12 @@ public class CarBrand extends Bean implements Parcelable {
             return new CarBrand[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "CarBrand{" +
+                "car_brand_id=" + car_brand_id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

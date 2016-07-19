@@ -62,4 +62,20 @@ public class User extends Bean implements Parcelable {
             return new User[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "user_id=" + user_id +
+                ", mobile='" + mobile + '\'' +
+                ", realname='" + realname + '\'' +
+                ", thumb='" + thumb + '\'' +
+                ", rate=" + rate +
+                ", create_time=" + create_time +
+                ", loc_report_time=" + loc_report_time +
+                ", lat=" + lat +
+                ", lng=" + lng +
+                ", token='" + token + '\'' +
+                '}';
+    }
 }

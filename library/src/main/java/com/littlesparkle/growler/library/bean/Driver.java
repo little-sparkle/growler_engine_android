@@ -115,4 +115,23 @@ public class Driver extends User implements Parcelable {
             return new Driver[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "driver_type=" + driver_type +
+                ", driving_license_type='" + driving_license_type + '\'' +
+                ", driving_license='" + driving_license + '\'' +
+                ", driving_license_reg_date='" + driving_license_reg_date + '\'' +
+                ", driving_license_pic='" + driving_license_pic + '\'' +
+                ", idcard_number='" + idcard_number + '\'' +
+                ", idcard_pic='" + idcard_pic + '\'' +
+                ", register_time=" + register_time +
+                ", register_status=" + register_status +
+                ", register_fail_reason='" + register_fail_reason + '\'' +
+                ", order_count=" + order_count +
+                ", order_success_count=" + order_success_count +
+                ", is_online=" + is_online +
+                '}';
+    }
 }

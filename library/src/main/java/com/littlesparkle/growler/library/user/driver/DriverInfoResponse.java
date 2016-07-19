@@ -10,4 +10,14 @@ public class DriverInfoResponse {
     public Car car;
     public CarBrand car_brand;
     public CarSerie car_serie;
+
+    @Override
+    public String toString() {
+        return "DriverInfoResponse{" +
+                "driver=" + driver +
+                ", car=" + car +
+                ", car_brand=" + car_brand +
+                ", car_serie=" + car_serie +
+                '}';
+    }
 }

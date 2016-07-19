@@ -56,4 +56,18 @@ public class Passenger extends User implements Parcelable {
             return new Passenger[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "nickname='" + nickname + '\'' +
+                ", b_y=" + b_y +
+                ", b_m=" + b_m +
+                ", b_d=" + b_d +
+                ", is_driver=" + is_driver +
+                ", id_num='" + id_num + '\'' +
+                ", verified=" + verified +
+                ", company_id=" + company_id +
+                '}';
+    }
 }

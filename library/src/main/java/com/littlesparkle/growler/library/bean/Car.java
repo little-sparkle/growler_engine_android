@@ -41,4 +41,13 @@ public class Car extends Bean implements Parcelable {
             return new Car[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "car_id=" + car_id +
+                ", car_number='" + car_number + '\'' +
+                ", vehicle_license_pic='" + vehicle_license_pic + '\'' +
+                '}';
+    }
 }
