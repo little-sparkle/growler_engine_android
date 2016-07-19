@@ -18,13 +18,7 @@ public abstract class Request<T> {
     protected T mService = null;
 
     public Request() {
-        mRetrofit = new Retrofit.Builder()
-                .client(createHttpClientBuilder().build())
-                .addConverterFactory(ConvertFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build();
-
-        mService = mRetrofit.create(getServiceClass());
+        this(Api.BASE_URL);
     }
 
     public Request(@NonNull String baseUrl) {

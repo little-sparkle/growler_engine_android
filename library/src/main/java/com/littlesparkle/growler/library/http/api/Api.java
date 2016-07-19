@@ -7,6 +7,8 @@ import org.json.JSONException;
 import retrofit2.adapter.rxjava.HttpException;
 
 public class Api {
+    public static final String BASE_URL = "http://172.16.97.81/api/";
+
     public static final int DEFAULT_TIMEOUT = 15;
     public static final int CONNECT_TIMEOUT = DEFAULT_TIMEOUT;
     public static final int READ_TIMEOUT = DEFAULT_TIMEOUT;

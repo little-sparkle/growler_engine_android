@@ -2,7 +2,6 @@ package com.littlesparkle.growler.library.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -44,16 +43,16 @@ public abstract class BaseLoginActivity extends BaseActivity {
                 onForgetPasswordClick();
             }
         });
-        mToRegister = (TextView) this.findViewById(R.id.go_to_register);
+        mToRegister = (TextView) findViewById(R.id.go_to_register);
         mToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onRegister();
+                onRegisterClick();
             }
         });
     }
 
-    protected abstract void onRegister();
+    protected abstract void onRegisterClick();
 
     protected abstract void onForgetPasswordClick();
 
