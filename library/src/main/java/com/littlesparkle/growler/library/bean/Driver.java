@@ -118,7 +118,7 @@ public class Driver extends User implements Parcelable {
 
     @Override
     public String toString() {
-        return "Driver{" +
+        return super.toString() + "\n" + "Driver{" +
                 "driver_type=" + driver_type +
                 ", driving_license_type='" + driving_license_type + '\'' +
                 ", driving_license='" + driving_license + '\'' +

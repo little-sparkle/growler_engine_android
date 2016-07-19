@@ -10,7 +10,7 @@ public class Response<T> {
     public String toString() {
         return "Response{" +
                 "code=" + code +
-                ", data=" + data +
+                ", data=" + data.toString() +
                 '}';
     }
 }

@@ -3,7 +3,6 @@ package com.littlesparkle.growler.library.user.driver;
 
 import com.littlesparkle.growler.library.http.DefaultResponse;
 import com.littlesparkle.growler.library.http.Request;
-import com.littlesparkle.growler.library.http.Response;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -20,7 +19,7 @@ public class DriverRequest extends Request<DriverRequest.DriverApi> {
 
     public interface DriverApi {
         @GET("driver/info")
-        Observable<Response<DriverInfoResponse>> getInfo(
+        Observable<DriverSignInResponse> getInfo(
                 @Field("user_id") int userId,
                 @Field("token") String token
         );
@@ -47,5 +46,21 @@ public class DriverRequest extends Request<DriverRequest.DriverApi> {
                 @Field("order_id") int orderId,
                 @Field("rate") int rate
         );
+
+        @POST("user/signup")
+        @FormUrlEncoded
+        Observable<DriverSignUpResponse> signup(
+                @Field("mobile") String mobile,
+                @Field("password") String password,
+                @Field("auth_code") String auth_code
+        );
+
+        @POST("user/signin")
+        @FormUrlEncoded
+        Observable<DriverSignInResponse> signin(
+                @Field("mobile") String mobile,
+                @Field("password") String password
+        );
+
     }
 }
