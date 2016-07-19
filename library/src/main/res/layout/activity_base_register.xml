@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.BaseRegisterActivity">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f0f0f0"
+                tools:context=".activity.BaseRegisterActivity">
 
     <RelativeLayout
         android:id="@+id/logo_container"
@@ -16,14 +17,16 @@
             android:layout_width="@dimen/logo_width"
             android:layout_height="@dimen/logo_height"
             android:layout_centerVertical="true"
-            android:background="@drawable/car_logo" />
+            android:background="@drawable/car_logo"/>
     </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/input_area_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_marginTop"
         android:layout_below="@id/logo_container"
+        android:background="#fff"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -31,13 +34,24 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/input_item_height">
 
-            <android.support.v7.widget.AppCompatEditText
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgv_number_register"
+                android:layout_width="20dp"
+                android:layout_height="23dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/mobile_focused"/>
+            <EditText
                 android:id="@+id/input_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableLeft="@drawable/mobile_focused"
+                android:layout_marginStart="@dimen/login_imgv_to_edit"
+                android:layout_toEndOf="@+id/imgv_number_register"
+                android:background="@null"
                 android:hint="@string/hint_mobile"
-                android:textColorHint="@color/text_hint" />
+                android:textColorHint="@color/text_hint"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -45,13 +59,24 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/input_item_height">
 
-            <android.support.v7.widget.AppCompatEditText
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgv_auth_coed_register"
+                android:layout_width="20dp"
+                android:layout_height="23dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/auth_code_unfocused"/>
+
+            <EditText
                 android:id="@+id/input_auth_code"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableLeft="@drawable/auth_code_unfocused"
+                android:layout_marginStart="@dimen/login_imgv_to_edit"
+                android:layout_toEndOf="@+id/imgv_auth_coed_register"
+                android:background="@null"
                 android:hint="@string/hint_auth_code"
-                android:textColorHint="@color/text_hint" />
+                android:textColorHint="@color/text_hint"/>
 
             <TextView
                 android:id="@+id/send_auth_code"
@@ -60,35 +85,53 @@
                 android:layout_alignParentEnd="true"
                 android:gravity="center"
                 android:text="@string/send_auth_code"
-                android:textSize="@dimen/text_small" />
+                android:textSize="@dimen/text_small"/>
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/password_container"
             android:layout_width="match_parent"
             android:layout_height="@dimen/input_item_height">
-
-            <android.support.v7.widget.AppCompatEditText
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgv_pwd_register"
+                android:layout_width="20dp"
+                android:layout_height="23dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/password_unfocused"/>
+            <EditText
                 android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableLeft="@drawable/password_unfocused"
+                android:layout_marginStart="@dimen/login_imgv_to_edit"
+                android:layout_toEndOf="@+id/imgv_pwd_register"
+                android:background="@null"
                 android:hint="@string/hint_password"
-                android:textColorHint="@color/text_hint" />
+                android:textColorHint="@color/text_hint"/>
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/password_confirmation_container"
             android:layout_width="match_parent"
             android:layout_height="@dimen/input_item_height">
-
-            <android.support.v7.widget.AppCompatEditText
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgv_pwd_confiemation_register"
+                android:layout_width="20dp"
+                android:layout_height="23dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/password_unfocused"/>
+            <EditText
                 android:id="@+id/input_password_confirmation"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableLeft="@drawable/password_unfocused"
+                android:layout_marginStart="@dimen/login_imgv_to_edit"
+                android:layout_toEndOf="@+id/imgv_pwd_confiemation_register"
+                android:background="@null"
                 android:hint="@string/hint_password_confirmation"
-                android:textColorHint="@color/text_hint" />
+                android:textColorHint="@color/text_hint"/>
         </RelativeLayout>
 
     </LinearLayout>
@@ -100,9 +143,10 @@
         android:layout_below="@+id/input_area_container"
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/activity_margin"
+        android:gravity="center"
         android:background="@color/action_button_background"
         android:text="@string/register"
         android:textColor="@color/md_white_1000"
-        android:textSize="@dimen/text_secondary" />
+        android:textSize="@dimen/text_secondary"/>
 </RelativeLayout>
 

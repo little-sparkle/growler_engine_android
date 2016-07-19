@@ -4,13 +4,14 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.littlesparkle.growler.library.R;
 
 public abstract class BaseLoginActivity extends BaseActivity {
-    protected AppCompatEditText mMobileInput;
-    protected AppCompatEditText mPwdInput;
+    protected EditText mMobileInput;
+    protected EditText mPwdInput;
     protected AppCompatButton mLoginBtn;
     protected TextView mForgetPwd;
 
@@ -26,8 +27,8 @@ public abstract class BaseLoginActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        mMobileInput = (AppCompatEditText) findViewById(R.id.input_mobile);
-        mPwdInput = (AppCompatEditText) findViewById(R.id.input_password);
+        mMobileInput = (EditText) findViewById(R.id.input_mobile);
+        mPwdInput = (EditText) findViewById(R.id.input_password);
         mLoginBtn = (AppCompatButton) findViewById(R.id.login_button);
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,16 +4,17 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.littlesparkle.growler.library.R;
 
 public abstract class BaseForgetPwdActivity extends BaseTitleBarActivity {
 
-    protected AppCompatEditText mMobileInput;
-    protected AppCompatEditText mAuthCodeInput;
-    protected AppCompatEditText mPwdInput;
-    protected AppCompatEditText mPwdConfInput;
+    protected EditText mMobileInput;
+    protected EditText mAuthCodeInput;
+    protected EditText mPwdInput;
+    protected EditText mPwdConfInput;
     protected AppCompatButton mResetPwdBtn;
     protected TextView mSendAuthCode;
 
@@ -30,10 +31,10 @@ public abstract class BaseForgetPwdActivity extends BaseTitleBarActivity {
     @Override
     protected void initView() {
         super.initView();
-        mMobileInput = (AppCompatEditText) findViewById(R.id.input_mobile);
-        mAuthCodeInput = (AppCompatEditText) findViewById(R.id.input_auth_code);
-        mPwdInput = (AppCompatEditText) findViewById(R.id.input_password);
-        mPwdConfInput = (AppCompatEditText) findViewById(R.id.input_password_confirmation);
+        mMobileInput = (EditText) findViewById(R.id.input_mobile);
+        mAuthCodeInput = (EditText) findViewById(R.id.input_auth_code);
+        mPwdInput = (EditText) findViewById(R.id.input_password);
+        mPwdConfInput = (EditText) findViewById(R.id.input_password_confirmation);
         mResetPwdBtn = (AppCompatButton) findViewById(R.id.reset_pwd_button);
         mResetPwdBtn.setOnClickListener(new View.OnClickListener() {
             @Override

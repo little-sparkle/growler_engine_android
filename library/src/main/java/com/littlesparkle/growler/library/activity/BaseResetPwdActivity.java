@@ -4,14 +4,15 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.littlesparkle.growler.library.R;
 
 public abstract class BaseResetPwdActivity extends BaseTitleBarActivity {
-    protected AppCompatEditText mOriginalInput;
-    protected AppCompatEditText mPwdInput;
-    protected AppCompatEditText mPwdConfInput;
+    protected EditText mOriginalInput;
+    protected EditText mPwdInput;
+    protected EditText mPwdConfInput;
     protected AppCompatButton mResetPwdBtn;
 
     @Override
@@ -27,9 +28,9 @@ public abstract class BaseResetPwdActivity extends BaseTitleBarActivity {
     @Override
     protected void initView() {
         super.initView();
-        mOriginalInput = (AppCompatEditText) findViewById(R.id.input_original_pwd);
-        mPwdInput = (AppCompatEditText) findViewById(R.id.input_new_pwd);
-        mPwdConfInput = (AppCompatEditText) findViewById(R.id.input_new_pwd_confirmation);
+        mOriginalInput = (EditText) findViewById(R.id.input_original_pwd);
+        mPwdInput = (EditText) findViewById(R.id.input_new_pwd);
+        mPwdConfInput = (EditText) findViewById(R.id.input_new_pwd_confirmation);
         mResetPwdBtn = (AppCompatButton) findViewById(R.id.reset_pwd_button);
         mResetPwdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
