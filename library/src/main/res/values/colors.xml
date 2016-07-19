@@ -2,7 +2,7 @@
 <resources>
     <color name="text_primary">@color/md_white_1000</color>
     <color name="text_secondary">@color/md_blue_grey_500</color>
-    <color name="base_title_bar_background">#FFF</color>
+    <color name="base_title_bar_background">#FaFaFa</color>
     <color name="base_title_bar_tv">#000000</color>
     <color name="action_button_background">#ffbc00</color>
     <color name="text_hint">#d3d3d3</color>

@@ -27,4 +27,5 @@
     <string name="hint_original_password">Original Password</string>
     <string name="hint_new_password">New Password</string>
     <string name="hint_new_password_confirmation">New Password Confirmation</string>
+    <string name="to_register">还没有账号？去注册吧~</string>
 </resources>

@@ -72,6 +72,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
                 android:gravity="center"
+                android:layout_marginRight="@dimen/login_imgv_to_edit"
                 android:text="@string/send_auth_code"
                 android:textSize="@dimen/text_small"/>
         </RelativeLayout>

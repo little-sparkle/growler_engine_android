@@ -14,6 +14,7 @@ public abstract class BaseLoginActivity extends BaseActivity {
     protected EditText mPwdInput;
     protected AppCompatButton mLoginBtn;
     protected TextView mForgetPwd;
+    protected TextView mToRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,16 @@ public abstract class BaseLoginActivity extends BaseActivity {
                 onForgetPasswordClick();
             }
         });
+        mToRegister = (TextView) this.findViewById(R.id.go_to_register);
+        mToRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onRegister();
+            }
+        });
     }
+
+    protected abstract void onRegister();
 
     protected abstract void onForgetPasswordClick();
 
