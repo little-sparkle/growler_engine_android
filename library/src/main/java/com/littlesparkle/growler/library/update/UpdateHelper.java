@@ -10,7 +10,7 @@ import com.littlesparkle.growler.library.misc.MiscHelper;
 import rx.Subscriber;
 
 public class UpdateHelper {
-    
+
     public static final void checkUpdate(
             @NonNull final Context context,
             @NonNull final Subscriber subscriber,
@@ -32,7 +32,7 @@ public class UpdateHelper {
             }
 
             @Override
-            protected void onError(ApiException err) {
+            protected void onError(String message) {
                 listener.onNoUpdate();
             }
         };

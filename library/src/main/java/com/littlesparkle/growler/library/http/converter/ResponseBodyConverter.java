@@ -26,7 +26,7 @@ final class ResponseBodyConverter<T> implements Converter<ResponseBody, T> {
         Response response = gson.fromJson(res, Response.class);
         if (response.code != Api.CODE_SUCCESS) {
             value.close();
-            throw new ApiException(Api.ERROR_CODE_STANDARD, "");
+            throw new ApiException(res);
         }
 
         try {

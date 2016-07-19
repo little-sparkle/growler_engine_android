@@ -26,5 +26,5 @@ public abstract class BaseHttpSubscriber<T> extends Subscriber<T> {
         onError(Api.handleError(e));
     }
 
-    protected abstract void onError(ApiException err);
+    protected abstract void onError(String errorMessage);
 }

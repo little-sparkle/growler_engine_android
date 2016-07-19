@@ -80,7 +80,7 @@ public class UpdateTask extends Request<UpdateService> {
                     }
 
                     @Override
-                    protected void onError(ApiException err) {
+                    protected void onError(String message) {
 
                     }
 

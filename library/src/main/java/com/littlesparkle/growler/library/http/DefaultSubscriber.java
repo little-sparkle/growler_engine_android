@@ -9,8 +9,8 @@ public class DefaultSubscriber extends BaseHttpSubscriber<DefaultResponse> {
     }
 
     @Override
-    protected void onError(ApiException err) {
-        onFail(err);
+    protected void onError(String message) {
+        onFail(message);
     }
 
     @Override
@@ -18,13 +18,13 @@ public class DefaultSubscriber extends BaseHttpSubscriber<DefaultResponse> {
         if (response.code == Api.CODE_SUCCESS) {
             onSuccess();
         } else {
-            onFail(new ApiException(response.code, ""));
+            onFail("");
         }
     }
 
     protected void onSuccess() {
     }
 
-    protected void onFail(ApiException err) {
+    protected void onFail(String message) {
     }
 }

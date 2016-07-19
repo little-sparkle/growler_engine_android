@@ -1,6 +1,8 @@
 package com.littlesparkle.growler.library.http.api;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
+import com.littlesparkle.growler.library.http.ErrorResponse;
 
 import org.json.JSONException;
 
@@ -17,24 +19,18 @@ public class Api {
     public static final int CODE_SUCCESS = 0;
     public static final int CODE_ERROR = 1;
 
-    public static final int ERROR_CODE_BASE = 1000;
-    public static final int ERROR_CODE_UNKNOWN = ERROR_CODE_BASE;
-    public static final int ERROR_CODE_STANDARD = ERROR_CODE_BASE + 1;
-    public static final int ERROR_CODE_JSON = ERROR_CODE_BASE + 2;
-
-    public static ApiException handleError(Throwable e) {
-        ApiException error;
+    public static String handleError(Throwable e) {
+        String msg;
         if (e instanceof ApiException) {
-            error = (ApiException) e;
+            Gson gson = new Gson();
+            ErrorResponse er = gson.fromJson(((ApiException) e).message, ErrorResponse.class);
+            msg = er.data.err_msg;
         } else if (e instanceof HttpException) {
             HttpException he = (HttpException) e;
-            error = new ApiException(he.code(), he.message());
-        } else if (e instanceof JsonParseException
-                || e instanceof JSONException) {
-            error = new ApiException(ERROR_CODE_JSON, e.getMessage());
+            msg = he.message();
         } else {
-            error = new ApiException(ERROR_CODE_UNKNOWN, e.getMessage());
+            msg = e.getMessage();
         }
-        return error;
+        return msg;
     }
 }
