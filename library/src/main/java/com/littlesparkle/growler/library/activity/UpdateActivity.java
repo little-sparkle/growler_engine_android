@@ -32,7 +32,7 @@ public abstract class UpdateActivity extends BaseActivity {
 
     @Override
     public void initData() {
-        Intent intent = this.getIntent();
+        Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("packageBundle");
         updatePackageInfo = (UpdatePackageInfo) bundle.getSerializable("updatePackageInfo");
     }
