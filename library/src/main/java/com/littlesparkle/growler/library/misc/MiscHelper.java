@@ -19,7 +19,7 @@ public class MiscHelper {
     public static boolean checkPhoneNumber(String phoneNumber) {
         phoneNumber = phoneNumber.trim();
         Pattern p = Pattern
-                .compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");
+                .compile("^((13[0-9])|(15[^4,\\D])|(18[0,3,5-9]))\\d{8}$");
         Matcher m = p.matcher(phoneNumber);
         return m.matches();
     }
