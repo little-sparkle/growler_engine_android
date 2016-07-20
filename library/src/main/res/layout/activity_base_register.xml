@@ -149,5 +149,18 @@
         android:text="@string/register"
         android:textColor="@color/md_white_1000"
         android:textSize="@dimen/text_secondary"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/to_be_driver"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="@string/to_be_driver"
+        android:textColor="#ffbc00"
+        android:textSize="16dp"/>
+
 </RelativeLayout>
 
