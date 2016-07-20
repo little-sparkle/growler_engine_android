@@ -20,10 +20,6 @@ public class Driver extends User implements Parcelable {
     public int order_success_count;
     public int is_online;
 
-//    public Car car;
-//    public CarBrand car_brand;
-//    public CarSerie car_serie;
-
     public Driver() {
     }
 
@@ -41,42 +37,21 @@ public class Driver extends User implements Parcelable {
         order_count = in.readInt();
         order_success_count = in.readInt();
         is_online = in.readInt();
-//        car = in.readParcelable(Car.class.getClassLoader());
-//        car_brand = in.readParcelable(CarBrand.class.getClassLoader());
-//        car_serie = in.readParcelable(CarSerie.class.getClassLoader());
     }
 
     @Override
     public void persist(Context context) {
         super.persist(context);
-//        car.persist(context);
-//        car_brand.persist(context);
-//        car_serie.persist(context);
     }
 
     @Override
     public void load(Context context) {
         super.load(context);
-//        if (car == null) {
-//            car = new Car();
-//        }
-//        car.load(context);
-//        if (car_brand == null) {
-//            car_brand = new CarBrand();
-//        }
-//        car_brand.load(context);
-//        if (car_serie == null) {
-//            car_serie = new CarSerie();
-//        }
-//        car_serie.load(context);
     }
 
     @Override
     public void dump() {
         super.dump();
-//        car.dump();
-//        car_brand.dump();
-//        car_serie.dump();
     }
 
     @Override
@@ -99,9 +74,6 @@ public class Driver extends User implements Parcelable {
         dest.writeInt(order_count);
         dest.writeInt(order_success_count);
         dest.writeInt(is_online);
-//        dest.writeParcelable(car, flags);
-//        dest.writeParcelable(car_brand, flags);
-//        dest.writeParcelable(car_serie, flags);
     }
 
     public static final Creator<Driver> CREATOR = new Creator<Driver>() {

@@ -15,6 +15,14 @@ public class User extends Bean implements Parcelable {
     public double lat;
     public double lng;
     public String token;
+    public String nickname;
+    public int b_y;
+    public int b_m;
+    public int b_d;
+    public int is_driver;
+    public String id_num;
+    public int verified;
+    public int company_id;
 
     public User() {
     }
@@ -30,6 +38,14 @@ public class User extends Bean implements Parcelable {
         lat = in.readDouble();
         lng = in.readDouble();
         token = in.readString();
+        nickname = in.readString();
+        b_y = in.readInt();
+        b_m = in.readInt();
+        b_d = in.readInt();
+        is_driver = in.readInt();
+        id_num = in.readString();
+        verified = in.readInt();
+        company_id = in.readInt();
     }
 
     @Override
@@ -49,6 +65,14 @@ public class User extends Bean implements Parcelable {
         dest.writeDouble(lat);
         dest.writeDouble(lng);
         dest.writeString(token);
+        dest.writeString(nickname);
+        dest.writeInt(b_y);
+        dest.writeInt(b_m);
+        dest.writeInt(b_d);
+        dest.writeInt(is_driver);
+        dest.writeString(id_num);
+        dest.writeInt(verified);
+        dest.writeInt(company_id);
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -76,6 +100,14 @@ public class User extends Bean implements Parcelable {
                 ", lat=" + lat +
                 ", lng=" + lng +
                 ", token='" + token + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", b_y=" + b_y +
+                ", b_m=" + b_m +
+                ", b_d=" + b_d +
+                ", is_driver=" + is_driver +
+                ", id_num='" + id_num + '\'' +
+                ", verified=" + verified +
+                ", company_id=" + company_id +
                 '}';
     }
 }

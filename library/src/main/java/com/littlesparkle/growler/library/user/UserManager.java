@@ -8,14 +8,12 @@ import com.littlesparkle.growler.library.bean.Car;
 import com.littlesparkle.growler.library.bean.CarBrand;
 import com.littlesparkle.growler.library.bean.CarSerie;
 import com.littlesparkle.growler.library.bean.Driver;
-import com.littlesparkle.growler.library.bean.Passenger;
 import com.littlesparkle.growler.library.bean.User;
 import com.littlesparkle.growler.library.preference.PrefHelper;
 
 public class UserManager {
     private static Class<Bean>[] CLASS_ARRAY = new Class[]{
             User.class,
-            Passenger.class,
             Driver.class,
             Car.class,
             CarBrand.class,

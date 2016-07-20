@@ -6,7 +6,7 @@ import com.littlesparkle.growler.library.bean.CarSerie;
 import com.littlesparkle.growler.library.bean.Driver;
 import com.littlesparkle.growler.library.http.Response;
 
-public class DriverSignInResponse extends Response<DriverSignInResponse.Date> {
+public class DriverInfoResponse extends Response<DriverInfoResponse.Date> {
     public class Date {
         public Driver driver;
         public Car car;
