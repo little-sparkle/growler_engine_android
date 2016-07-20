@@ -70,6 +70,7 @@
             <EditText
                 android:id="@+id/input_password"
                 android:layout_width="match_parent"
+                android:password="true"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/login_imgv_to_edit"
                 android:layout_toEndOf="@id/imgv_pwd"
