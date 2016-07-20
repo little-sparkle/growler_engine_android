@@ -8,7 +8,12 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 import rx.Observable;
+import rx.Subscriber;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class DriverRequest extends Request<DriverRequest.DriverApi> {
 
@@ -17,11 +22,20 @@ public class DriverRequest extends Request<DriverRequest.DriverApi> {
         return DriverApi.class;
     }
 
+    public Subscription getDriverInfo(Subscriber<DriverInfoResponse> subscriber,
+                                      int userId, String token) {
+        return mService.getInfo(userId, token)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(Schedulers.io())
+                .subscribe(subscriber);
+    }
+
     public interface DriverApi {
         @GET("driver/info")
         Observable<DriverInfoResponse> getInfo(
-                @Field("user_id") int userId,
-                @Field("token") String token
+                @Query("user_id") int userId,
+                @Query("token") String token
         );
 
         @POST("driver/online")
