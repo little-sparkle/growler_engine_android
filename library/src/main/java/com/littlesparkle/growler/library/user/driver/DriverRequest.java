@@ -23,8 +23,8 @@ public class DriverRequest extends Request<DriverRequest.DriverApi> {
     }
 
     public Subscription getDriverInfo(Subscriber<DriverInfoResponse> subscriber,
-                                      int userId, String token) {
-        return mService.getInfo(userId, token)
+                                      int userId, int driverId, String token) {
+        return mService.getInfo(userId, driverId, token)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .unsubscribeOn(Schedulers.io())
@@ -35,6 +35,7 @@ public class DriverRequest extends Request<DriverRequest.DriverApi> {
         @GET("driver/info")
         Observable<DriverInfoResponse> getInfo(
                 @Query("user_id") int userId,
+                @Query("driver_id") int driverId,
                 @Query("token") String token
         );
 
