@@ -24,6 +24,8 @@ import com.littlesparkle.growler.library.dialog.DialogHelper;
 import com.littlesparkle.growler.library.utility.FileUtils;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 public class WebViewActivity extends BaseActivity implements BaseWebChromeClient.OnOpenFileChooserListener {
     private static final int PHOTO_REQUEST_CAMERA = 1;
@@ -68,10 +70,25 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
 
         initWebView();
 
-        String url = getIntent().getStringExtra("url");
-        String title = getIntent().getStringExtra("title");
-        mTitle.setText(title);
-        mWebView.loadUrl(url);
+        Intent it = getIntent();
+        if (it != null) {
+            String title = it.getStringExtra("title");
+            mTitle.setText(title);
+
+            String url = it.getStringExtra("url");
+            int user_id = it.getIntExtra("user_id", 0);
+            String token = it.getStringExtra("token");
+            if (user_id == 0 || "".equals(token)) {
+                mWebView.loadUrl(url);
+            } else {
+                Map<String, String> params = new HashMap<>();
+                params.put("user_id", String.valueOf(user_id));
+                params.put("token", token);
+                mWebView.loadUrl(url, params);
+            }
+        } else {
+            // exception
+        }
     }
 
     @Override
