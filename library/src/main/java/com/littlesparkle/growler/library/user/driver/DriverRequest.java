@@ -70,14 +70,5 @@ public class DriverRequest extends Request<DriverRequest.DriverApi> {
                 @Field("user_id") int userId,
                 @Field("token") String token
         );
-
-        @POST("driver/rate")
-        @FormUrlEncoded
-        Observable<DefaultResponse> rate(
-                @Field("user_id") int userId,
-                @Field("token") String token,
-                @Field("order_id") int orderId,
-                @Field("rate") int rate
-        );
     }
 }

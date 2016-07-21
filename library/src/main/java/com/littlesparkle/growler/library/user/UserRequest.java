@@ -99,5 +99,14 @@ public class UserRequest extends Request<UserRequest.UserApi> {
                 @Field("user_id") int userId,
                 @Field("token") String token
         );
+
+        @POST("user/rate")
+        @FormUrlEncoded
+        Observable<DefaultResponse> rate(
+                @Field("user_id") int userId,
+                @Field("token") String token,
+                @Field("order_id") int orderId,
+                @Field("rate") int rate
+        );
     }
 }
