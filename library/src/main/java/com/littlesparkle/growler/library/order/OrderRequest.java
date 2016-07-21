@@ -39,21 +39,21 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
                 .subscribe(subscriber);
     }
 
-    public Subscription requestReservation(@NonNull Subscriber subscriber,
-                                           int userId,
-                                           String token,
-                                           int car_type,
-                                           double src_latitude,
-                                           double src_longitude,
-                                           double dest_latitude,
-                                           double dest_longitude,
-                                           long timestamp) {
-        return mService.requestReservation(userId, token, car_type, src_latitude, src_longitude, dest_latitude, dest_longitude, timestamp)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .unsubscribeOn(Schedulers.io())
-                .subscribe(subscriber);
-    }
+//    public Subscription requestReservation(@NonNull Subscriber subscriber,
+//                                           int userId,
+//                                           String token,
+//                                           int car_type,
+//                                           double src_latitude,
+//                                           double src_longitude,
+//                                           double dest_latitude,
+//                                           double dest_longitude,
+//                                           long timestamp) {
+//        return mService.requestReservation(userId, token, car_type, src_latitude, src_longitude, dest_latitude, dest_longitude, timestamp)
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .unsubscribeOn(Schedulers.io())
+//                .subscribe(subscriber);
+//    }
 
     public Subscription confirmOrder(@NonNull Subscriber subscriber,
                                      int userId,
@@ -166,18 +166,18 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
                 @Field("timestamp") long timestamp
         );
 
-        @POST("order/request/reservation")
-        @FormUrlEncoded
-        Observable<RequestOrderResponse> requestReservation(
-                @Field("user_id") int userId,
-                @Field("token") String token,
-                @Field("car_type") int car_type,
-                @Field("src_latitude") double src_latitude,
-                @Field("src_longitude") double src_longitude,
-                @Field("dest_latitude") double dest_latitude,
-                @Field("dest_longitude") double dest_longitude,
-                @Field("timestamp") long timestamp
-        );
+//        @POST("order/request/reservation")
+//        @FormUrlEncoded
+//        Observable<RequestOrderResponse> requestReservation(
+//                @Field("user_id") int userId,
+//                @Field("token") String token,
+//                @Field("car_type") int car_type,
+//                @Field("src_latitude") double src_latitude,
+//                @Field("src_longitude") double src_longitude,
+//                @Field("dest_latitude") double dest_latitude,
+//                @Field("dest_longitude") double dest_longitude,
+//                @Field("timestamp") long timestamp
+//        );
 
         @POST("order/driver/confirm")
         @FormUrlEncoded
