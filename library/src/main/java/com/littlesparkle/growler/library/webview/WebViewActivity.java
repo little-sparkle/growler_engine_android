@@ -133,19 +133,18 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
         }
 
         @JavascriptInterface
-        public void onSuccess(String resule) {
-            Toast.makeText(mContext, resule, Toast.LENGTH_SHORT).show();
-            if (mListener != null) {
-                mListener.onSuccess(resule);
+        public void onJsResult(int result, String message) {
+            switch (result) {
+                case 0:
+                    onJsSuccess(message);
+                    break;
+                case 1:
+                    onJsFailed(message);
+                    break;
+                default:
+                    break;
             }
-        }
 
-        @JavascriptInterface
-        public void onFailed(String resule) {
-            Toast.makeText(mContext, resule, Toast.LENGTH_SHORT).show();
-            if (mListener != null) {
-                mListener.onFailed(resule);
-            }
         }
     }
 
@@ -257,15 +256,10 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
         getImage();
     }
 
-    private ResultListener mListener;
 
-    public void setResultListener(ResultListener listener) {
-        mListener = listener;
+    public void onJsSuccess(String result) {
     }
 
-    public interface ResultListener {
-        void onSuccess(String resule);
-
-        void onFailed(String resule);
+    public void onJsFailed(String result) {
     }
 }
