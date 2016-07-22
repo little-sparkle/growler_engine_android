@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="text_primary">@color/md_white_1000</color>
+    <color name="text_primary_black">@color/md_black_1000</color>
     <color name="text_secondary">@color/md_blue_grey_500</color>
     <color name="base_title_bar_background">#FaFaFa</color>
     <color name="base_title_bar_tv">#000000</color>

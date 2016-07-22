@@ -35,7 +35,7 @@
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/text_primary_black"
             android:textSize="@dimen/text_primary" />
     </RelativeLayout>
 
