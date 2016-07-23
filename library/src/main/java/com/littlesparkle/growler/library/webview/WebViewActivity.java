@@ -112,7 +112,7 @@ public class WebViewActivity extends BaseActivity implements BaseWebChromeClient
             public void onProgressChanged(WebView view, int newProgress) {
                 mNpb.setProgress(newProgress);
                 if (newProgress == 100) {
-                    mNpb.setVisibility(View.INVISIBLE);
+                    mNpb.setVisibility(View.GONE);
                 } else {
                     mNpb.setVisibility(View.VISIBLE);
                 }
