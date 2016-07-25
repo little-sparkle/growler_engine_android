@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.littlesparkle.growler.library.http.DefaultResponse;
 import com.littlesparkle.growler.library.http.Request;
+import com.littlesparkle.growler.library.order.response.OrderInfoResponse;
 import com.littlesparkle.growler.library.order.response.RequestOrderResponse;
 
 import retrofit2.http.Field;
@@ -42,7 +43,7 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
                 .subscribe(subscriber);
     }
 
-    public Subscription getOrderInfo(@NonNull Subscriber subscriber,
+    public Subscription getOrderInfo(@NonNull Subscriber<OrderInfoResponse> subscriber,
                                      int userId,
                                      String token,
                                      int order_id) {
@@ -53,7 +54,7 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
                 .subscribe(subscriber);
     }
 
-    public Subscription getOrderHistory(@NonNull Subscriber subscriber,
+    public Subscription getOrderHistory(@NonNull Subscriber<DefaultResponse> subscriber,
                                         int userId,
                                         String token,
                                         int last_index,
@@ -65,7 +66,7 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
                 .subscribe(subscriber);
     }
 
-    public Subscription orderRate(@NonNull Subscriber subscriber,
+    public Subscription orderRate(@NonNull Subscriber<DefaultResponse> subscriber,
                                   int userId,
                                   String token,
                                   int order_id,
@@ -93,7 +94,7 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
         );
 
         @GET("order/info")
-        Observable<DefaultResponse> orderInfo(
+        Observable<OrderInfoResponse> orderInfo(
                 @Field("user_id") int userId,
                 @Field("token") String token,
                 @Field("order_id") int order_id

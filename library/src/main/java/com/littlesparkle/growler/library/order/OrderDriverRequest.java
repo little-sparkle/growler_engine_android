@@ -20,7 +20,7 @@ public class OrderDriverRequest extends Request<OrderDriverRequest.OrderDriverAp
         return OrderDriverApi.class;
     }
 
-    public Subscription confirmOrder(@NonNull Subscriber subscriber,
+    public Subscription confirmOrder(@NonNull Subscriber<DefaultResponse> subscriber,
                                      int userId,
                                      String token,
                                      int order_id,
@@ -32,7 +32,7 @@ public class OrderDriverRequest extends Request<OrderDriverRequest.OrderDriverAp
                 .subscribe(subscriber);
     }
 
-    public Subscription refuseOrder(@NonNull Subscriber subscriber,
+    public Subscription refuseOrder(@NonNull Subscriber<DefaultResponse> subscriber,
                                     int userId,
                                     String token,
                                     int order_id,
@@ -44,7 +44,7 @@ public class OrderDriverRequest extends Request<OrderDriverRequest.OrderDriverAp
                 .subscribe(subscriber);
     }
 
-    public Subscription arrivedOrder(@NonNull Subscriber subscriber,
+    public Subscription arrivedOrder(@NonNull Subscriber<DefaultResponse> subscriber,
                                      int userId,
                                      String token,
                                      int order_id,
@@ -56,7 +56,7 @@ public class OrderDriverRequest extends Request<OrderDriverRequest.OrderDriverAp
                 .subscribe(subscriber);
     }
 
-    public Subscription startOrder(@NonNull Subscriber subscriber,
+    public Subscription startOrder(@NonNull Subscriber<DefaultResponse> subscriber,
                                    int userId,
                                    String token,
                                    int order_id,
@@ -68,7 +68,7 @@ public class OrderDriverRequest extends Request<OrderDriverRequest.OrderDriverAp
                 .subscribe(subscriber);
     }
 
-    public Subscription finishOrder(@NonNull Subscriber subscriber,
+    public Subscription finishOrder(@NonNull Subscriber<DefaultResponse> subscriber,
                                     int userId,
                                     String token,
                                     int order_id,
@@ -80,7 +80,7 @@ public class OrderDriverRequest extends Request<OrderDriverRequest.OrderDriverAp
                 .subscribe(subscriber);
     }
 
-    public Subscription pauseOrder(@NonNull Subscriber subscriber,
+    public Subscription pauseOrder(@NonNull Subscriber<DefaultResponse> subscriber,
                                    int userId,
                                    String token,
                                    int order_id,
@@ -92,7 +92,7 @@ public class OrderDriverRequest extends Request<OrderDriverRequest.OrderDriverAp
                 .subscribe(subscriber);
     }
 
-    public Subscription restartOrder(@NonNull Subscriber subscriber,
+    public Subscription restartOrder(@NonNull Subscriber<DefaultResponse> subscriber,
                                      int userId,
                                      String token,
                                      int order_id,
@@ -104,7 +104,7 @@ public class OrderDriverRequest extends Request<OrderDriverRequest.OrderDriverAp
                 .subscribe(subscriber);
     }
 
-    public Subscription cancelOrder(@NonNull Subscriber subscriber,
+    public Subscription cancelOrder(@NonNull Subscriber<DefaultResponse> subscriber,
                                     int userId,
                                     String token,
                                     int order_id,

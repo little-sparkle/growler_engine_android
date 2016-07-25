@@ -20,7 +20,7 @@ public class OrderCustomerRequest extends Request<OrderCustomerRequest.OrderCust
         return OrderCustomerApi.class;
     }
 
-    public Subscription cancelOrder(@NonNull Subscriber subscriber,
+    public Subscription cancelOrder(@NonNull Subscriber<DefaultResponse> subscriber,
                                     int userId,
                                     String token,
                                     int order_id,
