@@ -1,4 +1,4 @@
-package com.littlesparkle.growler.library.order;
+package com.littlesparkle.growler.library.order.response;
 
 import com.littlesparkle.growler.library.http.Response;
 

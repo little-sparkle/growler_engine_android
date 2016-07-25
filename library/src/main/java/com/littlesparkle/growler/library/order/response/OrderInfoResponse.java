@@ -1,12 +1,17 @@
-package com.littlesparkle.growler.library.order;
+package com.littlesparkle.growler.library.order.response;
 
 import com.littlesparkle.growler.library.http.Response;
+import com.littlesparkle.growler.library.order.model.CarInfo;
+import com.littlesparkle.growler.library.order.model.CouponInfo;
+import com.littlesparkle.growler.library.order.model.CustomerInfo;
+import com.littlesparkle.growler.library.order.model.DriverInfo;
+import com.littlesparkle.growler.library.order.model.OrderInfo;
 
 public class OrderInfoResponse extends Response<OrderInfoResponse.Data> {
     public class Data {
         public OrderInfo order;
         public DriverInfo driver;
-        public PassengerInfo passenger;
+        public CustomerInfo passenger;
         public CarInfo car;
         public CouponInfo passenger_coupon;
 

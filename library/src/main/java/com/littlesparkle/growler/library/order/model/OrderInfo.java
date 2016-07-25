@@ -1,4 +1,4 @@
-package com.littlesparkle.growler.library.order;
+package com.littlesparkle.growler.library.order.model;
 
 public class OrderInfo {
     public int order_id;

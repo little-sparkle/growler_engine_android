@@ -1,4 +1,4 @@
-package com.littlesparkle.growler.library.order;
+package com.littlesparkle.growler.library.order.model;
 
 public class CouponInfo {
     public int customer_coupon_id;
