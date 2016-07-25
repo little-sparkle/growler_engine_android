@@ -36,4 +36,18 @@ public class Api {
         }
         return res;
     }
+
+    public static final String USER_TOKEN_ERROR = "user_token_error";
+    public static final String[] ERRPR_NEED_SIGN_IN = {
+            USER_TOKEN_ERROR
+    };
+
+    public static final boolean needReSignIn(String error) {
+        for (String str : ERRPR_NEED_SIGN_IN) {
+            if (str.equals(error)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
