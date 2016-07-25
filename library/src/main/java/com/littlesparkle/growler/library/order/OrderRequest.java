@@ -107,7 +107,7 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
                 @Field("page_count") int page_count
         );
 
-        @POST("order/info")
+        @POST("order/rate")
         @FormUrlEncoded
         Observable<DefaultResponse> orderRate(
                 @Field("user_id") int userId,
