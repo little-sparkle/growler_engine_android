@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.littlesparkle.growler.library.http.DefaultResponse;
 import com.littlesparkle.growler.library.http.Request;
-import com.littlesparkle.growler.library.order.response.OrderInfoResponse;
+import com.littlesparkle.growler.library.order.response.RequestOrderResponse;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -24,7 +24,7 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
         return OrderApi.class;
     }
 
-    public Subscription requestNow(@NonNull Subscriber subscriber,
+    public Subscription requestNow(@NonNull Subscriber<RequestOrderResponse> subscriber,
                                    int userId,
                                    String token,
                                    int car_type,
@@ -80,7 +80,7 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
     public interface OrderApi {
         @POST("order/request/now")
         @FormUrlEncoded
-        Observable<OrderInfoResponse> requestNow(
+        Observable<RequestOrderResponse> requestNow(
                 @Field("user_id") int userId,
                 @Field("token") String token,
                 @Field("car_type") int car_type,

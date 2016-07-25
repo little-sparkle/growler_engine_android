@@ -1,19 +1,16 @@
 package com.littlesparkle.growler.library.order.response;
 
 import com.littlesparkle.growler.library.http.Response;
+import com.littlesparkle.growler.library.order.model.OrderInfo;
 
 public class RequestOrderResponse extends Response<RequestOrderResponse.Data> {
     public class Data {
-        public int order_id;
-        public int status_code;
-        public String status_description;
+        public OrderInfo order;
 
         @Override
         public String toString() {
             return "Data{" +
-                    "order_id=" + order_id +
-                    ", status_code=" + status_code +
-                    ", status_description='" + status_description + '\'' +
+                    "order=" + order +
                     '}';
         }
     }

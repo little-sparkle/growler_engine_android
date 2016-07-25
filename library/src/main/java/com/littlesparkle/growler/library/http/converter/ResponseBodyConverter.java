@@ -5,6 +5,7 @@ import com.google.gson.TypeAdapter;
 import com.littlesparkle.growler.library.http.Response;
 import com.littlesparkle.growler.library.http.api.Api;
 import com.littlesparkle.growler.library.http.api.ApiException;
+import com.littlesparkle.growler.library.log.Logger;
 
 import java.io.IOException;
 
@@ -30,6 +31,7 @@ final class ResponseBodyConverter<T> implements Converter<ResponseBody, T> {
         }
 
         try {
+            Logger.log("got response: " + res);
             return adapter.fromJson(res);
         } finally {
             value.close();
