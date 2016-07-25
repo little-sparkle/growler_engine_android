@@ -34,4 +34,12 @@ public class UserManager {
             BeanHelper.clean(context, cls);
         }
     }
+
+    public static String getToken(Context context) {
+        return PrefHelper.getString(context, "token");
+    }
+
+    public static void setToken(Context context, String token) {
+        PrefHelper.setString(context, "token", token);
+    }
 }

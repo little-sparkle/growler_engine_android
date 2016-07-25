@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:hedgehog="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFF">
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/base_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_alignParentTop="true"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_message"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/title_bar"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/tv_evaluate"
+            android:background="#d3d3d3"/>
+        <TextView
+            android:id="@+id/tv_evaluate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/evaluate"/>
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/tv_evaluate"
+            android:background="#d3d3d3"/>
+    </RelativeLayout>
+
+
+    <com.hedgehog.ratingbar.RatingBar
+        android:id="@+id/ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative_message"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        hedgehog:clickable="true"
+        hedgehog:halfstart="true"
+        hedgehog:starCount="5"
+        hedgehog:starEmpty="@mipmap/star_empty"
+        hedgehog:starFill="@mipmap/star_full"
+        hedgehog:starHalf="@mipmap/star_half"
+        hedgehog:starImageHeight="60dp"
+        hedgehog:starImagePadding="5dp"
+        hedgehog:starImageWidth="40dp"/>
+
+    <Button
+        android:id="@+id/bt_evaluate"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/ratingbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="80dp"
+        android:background="#ffbc00"
+        android:text="@string/bt_evaluate"
+        android:textColor="#fff"
+        android:textSize="17sp"/>
+
+
+</RelativeLayout>
