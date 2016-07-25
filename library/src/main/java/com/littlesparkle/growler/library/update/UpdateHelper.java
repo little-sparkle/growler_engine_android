@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.littlesparkle.growler.library.http.BaseHttpSubscriber;
+import com.littlesparkle.growler.library.http.ErrorResponse;
 import com.littlesparkle.growler.library.http.api.ApiException;
 import com.littlesparkle.growler.library.misc.MiscHelper;
 
@@ -32,7 +33,7 @@ public class UpdateHelper {
             }
 
             @Override
-            protected void onError(String message) {
+            protected void onError(ErrorResponse errorResponse) {
                 listener.onNoUpdate();
             }
         };

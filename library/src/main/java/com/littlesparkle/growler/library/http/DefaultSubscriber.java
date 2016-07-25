@@ -9,8 +9,8 @@ public class DefaultSubscriber extends BaseHttpSubscriber<DefaultResponse> {
     }
 
     @Override
-    protected void onError(String message) {
-        onFail(message);
+    protected void onError(ErrorResponse errorResponse) {
+        onFail(errorResponse.data.err_msg);
     }
 
     @Override

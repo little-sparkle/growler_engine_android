@@ -13,4 +13,9 @@ public class ErrorResponse extends Response<ErrorResponse.Data> {
                     '}';
         }
     }
+
+    public ErrorResponse() {
+        this.code = -1;
+        this.data = new Data();
+    }
 }

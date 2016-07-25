@@ -19,18 +19,21 @@ public class Api {
     public static final int CODE_SUCCESS = 0;
     public static final int CODE_ERROR = 1;
 
-    public static String handleError(Throwable e) {
-        String msg;
+    public static ErrorResponse handleError(Throwable e) {
+        ErrorResponse res;
         if (e instanceof ApiException) {
             Gson gson = new Gson();
-            ErrorResponse er = gson.fromJson(((ApiException) e).message, ErrorResponse.class);
-            msg = er.data.err_msg;
+            res = gson.fromJson(((ApiException) e).message, ErrorResponse.class);
         } else if (e instanceof HttpException) {
             HttpException he = (HttpException) e;
-            msg = he.message();
+            res = new ErrorResponse();
+            res.data.err_msg = he.message();
+            res.data.err_no = String.valueOf(he.code());
         } else {
-            msg = e.getMessage();
+            res = new ErrorResponse();
+            res.data.err_msg = e.getMessage();
+            res.data.err_no = e.getLocalizedMessage();
         }
-        return msg;
+        return res;
     }
 }

@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.littlesparkle.growler.library.activity.UpdateActivity;
 import com.littlesparkle.growler.library.http.BaseHttpSubscriber;
+import com.littlesparkle.growler.library.http.ErrorResponse;
 import com.littlesparkle.growler.library.http.Request;
 import com.littlesparkle.growler.library.http.api.ApiException;
 import com.littlesparkle.growler.library.http.converter.ConvertFactory;
@@ -80,7 +81,7 @@ public class UpdateTask extends Request<UpdateService> {
                     }
 
                     @Override
-                    protected void onError(String message) {
+                    protected void onError(ErrorResponse errorResponse) {
 
                     }
 

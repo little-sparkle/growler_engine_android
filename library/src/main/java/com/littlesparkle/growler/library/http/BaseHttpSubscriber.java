@@ -47,11 +47,11 @@ public abstract class BaseHttpSubscriber<T> extends Subscriber<T> {
         onError(Api.handleError(e));
     }
 
-    protected void onError(String errorMessage) {
+    protected void onError(ErrorResponse error) {
         if (mToast != null) {
-            mToast.showToast(errorMessage);
+            mToast.showToast(error.data.err_msg);
         }
-        Logger.e("Got error message:" + errorMessage);
+        Logger.e("Got error message:" + error);
     }
 
     public interface IProgress {
