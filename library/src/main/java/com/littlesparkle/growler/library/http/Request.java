@@ -4,8 +4,6 @@ import android.support.annotation.NonNull;
 
 import com.littlesparkle.growler.library.http.api.Api;
 import com.littlesparkle.growler.library.http.converter.ConvertFactory;
-import com.littlesparkle.growler.library.order.response.RequestOrderResponse;
-
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -41,6 +39,4 @@ public abstract class Request<T> {
     }
 
     protected abstract Class<T> getServiceClass();
-
-
 }

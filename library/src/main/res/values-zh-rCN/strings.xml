@@ -28,4 +28,10 @@
     <string name="hint_original_password">原始密码</string>
     <string name="hint_new_password">新密码</string>
     <string name="hint_new_password_confirmation">新密码确认</string>
+
+    <string name="to_register">还没有账号？去注册吧~</string>
+    <string name="to_be_driver">成为司机</string>
+    <string name="evaluate">订单评价</string>
+    <string name="bt_evaluate">提交评价</string>
+    <string name="cancelOrder">取消订单</string>
 </resources>
