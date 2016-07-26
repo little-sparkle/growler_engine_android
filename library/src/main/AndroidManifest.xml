@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.littlesparkle.growler.library" />
+<manifest
+    package="com.littlesparkle.growler.library"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <application>
+        <activity android:name=".activity.CancelActivity">
+        </activity>
+    </application>
+
+</manifest>
