@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.littlesparkle.growler.library.http.api.Api;
 import com.littlesparkle.growler.library.http.converter.ConvertFactory;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -12,7 +13,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 
 public abstract class Request<T> {
 
-    protected Retrofit mRetrofit = null;
+    protected static Retrofit mRetrofit = null;
 
     protected T mService = null;
 
@@ -21,13 +22,17 @@ public abstract class Request<T> {
     }
 
     public Request(@NonNull String baseUrl) {
-        mRetrofit = new Retrofit.Builder()
-                .client(createHttpClientBuilder().build())
-                .addConverterFactory(ConvertFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .baseUrl(baseUrl)
-                .build();
+        synchronized (Request.class) {
+            if (mRetrofit == null) {
+                mRetrofit = new Retrofit.Builder()
+                        .client(createHttpClientBuilder().build())
+                        .addConverterFactory(ConvertFactory.create())
+                        .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                        .baseUrl(baseUrl)
+                        .build();
 
+            }
+        }
         mService = mRetrofit.create(getServiceClass());
     }
 
