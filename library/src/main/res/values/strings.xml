@@ -29,4 +29,13 @@
     <string name="hint_new_password">New Password</string>
     <string name="hint_new_password_confirmation">New Password Confirmation</string>
 
+    <string name="to_register">Still no account? To register!</string>
+    <string name="to_be_driver">As the driver</string>
+    <string name="evaluate">order evaluation</string>
+    <string name="bt_evaluate">Submit evaluation</string>
+    <string name="cancelOrder">Cancel order</string>
+    <string name="cancel_order_hint">If you want to cancel the trip, please select a reason</string>
+    <string name="ForCustomers">We will try to provide better service for you</string>
+    <string name="not_cancel">not cancel</string>
+
 </resources>

@@ -11,19 +11,92 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_bar_height"
         android:layout_alignParentTop="true"/>
+    <RelativeLayout
+        android:id="@+id/relative_evaluate_info"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/title_bar"
+        android:background="#FFF">
+        <ImageView
+            android:id="@+id/imgv_evaluate_info"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/order_driver_head"/>
+        <TextView
+            android:id="@+id/tv_name_order_driver_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="19dp"
+            android:layout_toRightOf="@+id/imgv_evaluate_info"
+            android:text="老司机"
+            android:textColor="#252525"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/tv_car_number_evaluate_driver_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="19dp"
+            android:layout_toRightOf="@+id/tv_name_order_driver_info"
+            android:text="京888888"
+            android:textColor="#252525"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/tv_color_evaluate_driver_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_car_number_evaluate_driver_info"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="9dp"
+            android:layout_toRightOf="@+id/imgv_evaluate_info"
+            android:text="黑色"
+            android:textColor="#252525"
+            android:textSize="11sp"/>
+        <TextView
+            android:id="@+id/tv_model_evaluate_driver_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_car_number_evaluate_driver_info"
+            android:layout_marginLeft="12.5dp"
+            android:layout_marginTop="9dp"
+            android:layout_toRightOf="@+id/tv_color_evaluate_driver_info"
+            android:text="凯迪拉克"
+            android:textColor="#252525"
+            android:textSize="11sp"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="21dp"
+            android:layout_marginTop="21dp"
+            android:layout_toLeftOf="@+id/imgv_message_evaluate"
+            android:src="@drawable/order_driver_message"/>
+        <ImageView
+            android:id="@+id/imgv_message_evaluate"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="21dp"
+            android:layout_marginTop="21dp"
+            android:src="@drawable/order_driver_phone"/>
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relative_message"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/title_bar"
-        android:layout_marginTop="30dp">
+        android:layout_below="@+id/relative_evaluate_info"
+        android:layout_marginTop="20dp">
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/tv_evaluate"
             android:background="#d3d3d3"/>
@@ -35,10 +108,11 @@
             android:layout_centerVertical="true"
             android:text="@string/evaluate"/>
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
             android:layout_toRightOf="@+id/tv_evaluate"
             android:background="#d3d3d3"/>
     </RelativeLayout>
@@ -58,19 +132,17 @@
         hedgehog:starEmpty="@mipmap/star_empty"
         hedgehog:starFill="@mipmap/star_full"
         hedgehog:starHalf="@mipmap/star_half"
-        hedgehog:starImageHeight="60dp"
-        hedgehog:starImagePadding="5dp"
-        hedgehog:starImageWidth="40dp"/>
+        hedgehog:starImageHeight="45dp"
+        hedgehog:starImagePadding="10.5dp"
+        hedgehog:starImageWidth="45dp"/>
 
     <Button
         android:id="@+id/bt_evaluate"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_width="210dp"
+        android:layout_height="46dp"
         android:layout_below="@+id/ratingbar"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="118dp"
         android:background="#ffbc00"
         android:text="@string/bt_evaluate"
         android:textColor="#fff"

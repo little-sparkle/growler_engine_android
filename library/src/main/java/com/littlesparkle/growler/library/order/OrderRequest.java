@@ -11,6 +11,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;
@@ -95,9 +96,9 @@ public class OrderRequest extends Request<OrderRequest.OrderApi> {
 
         @GET("order/info")
         Observable<OrderInfoResponse> orderInfo(
-                @Field("user_id") int userId,
-                @Field("token") String token,
-                @Field("order_id") int order_id
+                @Query("user_id") int userId,
+                @Query("token") String token,
+                @Query("order_id") int order_id
         );
 
         @GET("order/history")

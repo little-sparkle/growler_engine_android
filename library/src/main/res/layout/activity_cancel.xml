@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     tools:context="com.littlesparkle.growler.library.activity.CancelActivity">
     <include
         android:id="@+id/title_bar"
@@ -11,29 +12,67 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_bar_height"
         android:layout_alignParentTop="true"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_cancel_message_hint"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:layout_below="@+id/title_bar"
+        android:background="#FFF">
+
+        <TextView
+            android:id="@+id/tv_cancel_message_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:text="@string/cancel_order_hint"
+            android:textColor="#252525"
+            android:textSize="17sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_cancel_message_hint"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:text="@string/ForCustomers"
+            android:textColor="#f3ad00"
+            android:textSize="12sp"/>
+
+    </RelativeLayout>
+
     <ListView
         android:id="@+id/lv_cancel"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_below="@+id/title_bar"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="20dp">
+        android:layout_below="@+id/relative_cancel_message_hint"/>
 
-    </ListView>
 
     <Button
         android:id="@+id/bt_cancel"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_width="128dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#ffbc00"
-        android:text="@string/cancelOrder"
-        android:textColor="#fff"
         android:layout_marginBottom="20dp"
-        android:textSize="17sp"/>
+        android:layout_marginLeft="23dp"
+        android:background="#FFF"
+        android:gravity="center"
+        android:text="@string/cancelOrder"
+        android:textColor="#ff9c00"
+        android:textSize="14sp"/>
+
+    <Button
+        android:id="@+id/bt_not_cancel"
+        android:layout_width="128dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="23dp"
+        android:background="#FFF"
+        android:gravity="center"
+        android:text="@string/not_cancel"
+        android:textColor="#ff9c00"
+        android:textSize="14sp"/>
+
 </RelativeLayout>

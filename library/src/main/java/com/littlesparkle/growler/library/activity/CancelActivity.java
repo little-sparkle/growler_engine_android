@@ -16,13 +16,21 @@ public abstract class CancelActivity extends BaseTitleBarActivity {
     protected ListView mListView;
     protected ItemLvCancelAdapter mItemLvCancelAdapter;
     protected Button mButtonCancel;
+    protected Button mButtonNotCancel;
 
     public abstract List<String> setReasonList();
 
     @Override
     protected void initView() {
         super.initView();
-        mButtonCancel= (Button) findViewById(R.id.bt_cancel);
+        mButtonNotCancel= (Button) findViewById(R.id.bt_not_cancel);
+        mButtonNotCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNotCancelButtonClick();
+            }
+        });
+        mButtonCancel = (Button) findViewById(R.id.bt_cancel);
         mButtonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +49,8 @@ public abstract class CancelActivity extends BaseTitleBarActivity {
             }
         });
     }
+
+    protected abstract void onNotCancelButtonClick();
 
     protected abstract void onCancelButtonClick();
 
