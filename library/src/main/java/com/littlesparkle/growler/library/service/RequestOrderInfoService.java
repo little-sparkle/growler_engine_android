@@ -23,7 +23,7 @@ public abstract class RequestOrderInfoService extends Service {
             public void run() {
                 getOrderInfo();
             }
-        }, 5000, 5000);
+        }, 3000, 3000);
         return super.onStartCommand(intent, flags, startId);
     }
 
